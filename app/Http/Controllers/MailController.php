@@ -30,6 +30,27 @@ class MailController extends Controller
         return view('mail.sendnewmail');
     }
 
+
+
+
+
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function sendmail(Request $request)
+    {
+        dd($request -> all());
+    }
+
+
+
+
+
     /**
      * Show the form for creating a new resource.
      *

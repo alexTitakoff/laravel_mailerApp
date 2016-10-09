@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="col-sm-12">
-			<form action="{{ route('sendmail.store') }}"  method="POST"  class="form-horizontal" role="form" >
+			<form action="{{ url('mail/sendamail') }}"  method="POST"  class="form-horizontal" role="form" >
 				<input type="hidden"  name="_token"  value="{{ csrf_token() }}">
 				<div class="form-group">
 					<legend>Send an email to anyone </legend>

@@ -16,7 +16,7 @@
 
 		<div class="col-sm-12">
 			<div class="col-sm-4">
-				<a href="{{ route('sendmail.index') }}" class="btn btn-info btn-block btn-lg" > Send Mail</a>
+				<a href="{{ route('mail.index') }}" class="btn btn-info btn-block btn-lg" > Send Mail</a>
 			</div>
 
 			<div class="col-sm-4">
