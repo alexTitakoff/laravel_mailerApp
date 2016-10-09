@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="col-sm-12">
-			<form action="{{ url('mail/sendamail') }}"  method="POST"  class="form-horizontal" role="form" >
+			<form action="{{ url('mail/sendmail') }}"  method="POST"  class="form-horizontal" role="form" >
 				<input type="hidden"  name="_token"  value="{{ csrf_token() }}">
 				<div class="form-group">
 					<legend>Send an email to anyone </legend>
@@ -25,6 +25,13 @@
 					<label for="email">Sending to who?</label>
 					<input type="email" name="email" value="{{ Input::old('email') }}" class="form-control" placeholder="Type an email"  >
 				</div>
+
+
+				<div class="form-group">
+					<label for="subject">Sending to who?</label>
+					<input type="subject" name="subject" value="{{ Input::old('subject') }}" class="form-control" placeholder="Subjct"  >
+				</div>
+
 
 				<div class="form-group">
 					<label for="message">Your message</label>
