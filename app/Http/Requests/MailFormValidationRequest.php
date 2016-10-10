@@ -16,6 +16,8 @@ class MailFormValidationRequest extends Request
         return true;
     }
 
+
+    
     /**
      * Get the validation rules that apply to the request.
      *
@@ -29,4 +31,25 @@ class MailFormValidationRequest extends Request
         'message' => 'required|min:5'
         ];
     }
-}
+
+
+        /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+        public function messages()
+        {
+            return [
+            'email' => 'required|email',
+            'subject' => 'required|min:5',
+            'message' => 'required|min:5'
+            ];
+        }
+
+
+
+
+
+
+    }
