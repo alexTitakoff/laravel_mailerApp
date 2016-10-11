@@ -7,6 +7,10 @@ use App\Http\Requests\MailFormValidationRequest;
 
 use App\Http\Requests;
 use Input;
+
+use Mail;
+use Session;
+
 class MailController extends Controller
 {
     /**
@@ -45,6 +49,28 @@ class MailController extends Controller
      */
     public function sendmail(MailFormValidationRequest $request)
     {
+
+
+        if($request -> has('message') && $request -> has('email'))    {
+    // $email = $request -> email;
+    // $subject = $request -> subject;
+    // $message = $request -> message;
+
+            $body = ['message' => $request -> message];
+
+            Mail::send('mail.newmail', ['body' => $body], function ($message) use ($request)      {
+
+                $message -> to($request -> email)-> from('noreply@mailerapp.com', 'Mailer App Service')->subject($request-> subject);  
+
+            }); 
+            //send
+            Session::flash('flashmessage', "Mail sent succefuly");
+            return redirect('mail'); 
+
+
+        }  // if
+
+
 
     }
 

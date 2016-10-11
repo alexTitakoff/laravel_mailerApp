@@ -11,6 +11,19 @@
 
 		<div class="col-sm-12">
 			<h1>Laravel Mail App</h1>
+
+			@if(Session::has('flashmessage'))
+			
+			<div class="alert alert-success">				
+				<button type="button" class="close" data-dismiss =
+				"alert" aria-hidden="true" > &times; </button>
+				<strong> {{ Session::get('flashmessage') }}</strong>
+			</div>
+			
+
+			@endif
+
+
 		</div>
 
 		<div class="col-sm-12">
@@ -28,14 +41,14 @@
 
 
 				<div class="form-group">
-					<label for="subject">Sending to who?</label>
+					<label for="subject">Mail Subject</label>
 					<input type="subject" name="subject" value="{{ Input::old('subject') }}" class="form-control" placeholder="Subjct"  >
 				</div>
 
 
 				<div class="form-group">
 					<label for="message">Your message</label>
-					<textarea rows="5" cols="20" id="message" type="text" name="message" value="{{ Input::old('message') }}" class="form-control" placeholder="Type a message"></textarea>
+					<textarea rows="5" cols="20" id="message" type="text" name="message" value="{{ Input::old('message') }}" class="form-control ckeditor " placeholder="Type a message"></textarea>
 				</div>
 
 				<div class="form-group">
